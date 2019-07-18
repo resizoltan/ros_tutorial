@@ -1,0 +1,4 @@
+<launch>
+  <node pkg="beginner_tutorials" type="add_two_ints_server" name="adder_node" />
+  <test test-name="test_add_two_ints_server" pkg="beginner_tutorials" type="test_node" />
+</launch>
