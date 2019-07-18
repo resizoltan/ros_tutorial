@@ -2,10 +2,16 @@
 # This config uses industrial_ci (https://github.com/ros-industrial/industrial_ci.git).
 # For troubleshooting, see readme (https://github.com/ros-industrial/industrial_ci/blob/master/README.rst)
 
-language: generic # optional, just removes the language badge
-
+language: cpp # optional, just removes the language badge
+compiler:
+  - gcc
 services:
   - docker
+os:
+  - linux
+branches:
+  only:
+  - master
 
 # include the following block if the C/C++ build artifacts should get cached by Travis,
 # CCACHE_DIR needs to get set as well to actually fill the cache
