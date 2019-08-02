@@ -50,9 +50,5 @@ install:
   - git clone --quiet --depth 1 https://github.com/ros-industrial/industrial_ci.git .industrial_ci
 script:
 - .industrial_ci/travis.sh
-- mkdir build
-- cd build
-- cmake ..
-- build-wrapper-linux-x86-64 --out-dir "bw-output" make
-- cd ..
+- sudo - E env "PATH=$PATH" ./build_for_sonar.sh
 - sonar-scanner
