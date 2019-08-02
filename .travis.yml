@@ -52,4 +52,5 @@ script:
 - cd build_sonar
 - cmake ../src/beginner_tutorials
 - build-wrapper-linux-x86-64 --out-dir "bw-output" make
+- cd /root/catkin_ws/src/beginner_tutorials
 - sonar-scanner
