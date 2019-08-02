@@ -26,8 +26,10 @@ int64_t Adder::Add(int64_t a, int64_t b)
 
 string Adder::GetID()
 {
-  float f = 1.45;
-  int i = (int)f;
+  char *name = (char*) alloca(10);
+  free(name);
+  char *name2 = "name";
+  free(name2);
   return id;
 }
 
