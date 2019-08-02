@@ -46,11 +46,7 @@ addons:
 install:
   - git clone --quiet --depth 1 https://github.com/ros-industrial/industrial_ci.git .industrial_ci
 script:
+- ls -a
 - .industrial_ci/travis.sh
-- cd /root/catkin_ws/
-- mkdir build_sonar
-- cd build_sonar
-- cmake ../src/beginner_tutorials
-- build-wrapper-linux-x86-64 --out-dir "bw-output" make
-- cd /root/catkin_ws/src/beginner_tutorials
+- ls -a
 - sonar-scanner
