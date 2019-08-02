@@ -49,8 +49,5 @@ notifications:
 install:
   - git clone --quiet --depth 1 https://github.com/ros-industrial/industrial_ci.git .industrial_ci
 script:
-- .industrial_ci/travis.sh
-- whoami
-- sudo su
-- whoami
+- build-wrapper-linux-x86-64 --ou-dir "bw-output" .industrial_ci/travis.sh
 - sonar-scanner
