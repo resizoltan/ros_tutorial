@@ -50,5 +50,5 @@ install:
   - git clone --quiet --depth 1 https://github.com/ros-industrial/industrial_ci.git .industrial_ci
 script:
 - .industrial_ci/travis.sh
-- sudo - E env "PATH=$PATH" ./build_for_sonar.sh
+- sudo -E env "PATH=$PATH" ./build_for_sonar.sh
 - sonar-scanner
