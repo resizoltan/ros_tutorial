@@ -26,6 +26,8 @@ int64_t Adder::Add(int64_t a, int64_t b)
 
 string Adder::GetID()
 {
+  float f = 1.45;
+  int i = (int)f;
   return id;
 }
 
