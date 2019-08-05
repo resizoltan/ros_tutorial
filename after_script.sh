@@ -10,6 +10,7 @@ cmake ../src/rosintro
 # make tests
 make test
 # copy wrapper report to local filesystem
+source "${ICI_SRC_PATH}/docker.sh"
 docker_cp CONTAINER:/root/catkin_ws/build-sonar/bw-output /home/travis/build/rosintro/bw-output
 # return to working directory
 cd $working_dir
