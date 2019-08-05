@@ -8,7 +8,7 @@ cd build_sonar
 cmake ../src/rosintro
 /root/sonar/build-wrapper-linux-x86/build-wrapper-linux-x86-64 --out-dir "/root/catkin_ws/build_sonar/bw-output" make
 # execute sonar-scanner
-/root/sonar/sonar-scanner-4.0.0.1744/bin/sonar-scanner
+/root/sonar/sonar-scanner-4.0.0.1744-linux/bin/sonar-scanner
 # return to working directory
 cd $working_dir
 
