@@ -48,5 +48,5 @@ install:
   - git clone --quiet --depth 1 https://github.com/ros-industrial/industrial_ci.git .industrial_ci
 script:
 - .industrial_ci/travis.sh
-- ./sonar_script.sh
+- sudo ./sonar_script.sh
 - sonar-scanner
