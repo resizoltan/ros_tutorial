@@ -10,6 +10,8 @@ cmake ../src/rosintro
 # make tests
 make test
 # run sonar scanner
+mkdir /root/sonar/src
+mkdir /root/sonar/src/rosintro
 cp -r /root/catkin_ws/src/rosintro /root/sonar/src/rosintro
 cd /root/sonar/src/rosintro
 /root/sonar/sonar-scanner-4.0.0.1744-linux/bin/sonar-scanner
