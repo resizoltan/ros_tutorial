@@ -28,7 +28,7 @@ env:
   global: # global settings for all jobs
     - ROS_REPO=ros
     - CCACHE_DIR=$HOME/.ccache # enables C/C++ caching in industrial_ci
-    - DOCKER_RUN_OPTS='--name  ici_docker'   # '-e SONAR_TOKEN=$SONAR_TOKEN'
+    - DOCKER_RUN_OPTS='--name  my_ici_docker'   # '-e SONAR_TOKEN=$SONAR_TOKEN'
     - BEFORE_SCRIPT='./before_script.sh'
     - AFTER_SCRIPT='./after_script.sh'
   matrix: # each line is a job
