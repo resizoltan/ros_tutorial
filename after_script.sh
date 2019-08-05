@@ -12,9 +12,10 @@ make test
 # set permission
 chmod 777 /root/sonar
 chmod 777 /root/catkin_ws/build_sonar
+chmod 777 /root/catkin_ws/src/rosintro
 # execute sonar-scanner
 cd /root/catkin_ws/src/rosintro
-/root/sonar/sonar-scanner-4.0.0.1744-linux/bin/sonar-scanner -X
+/root/sonar/sonar-scanner-4.0.0.1744-linux/bin/sonar-scanner
 # return to working directory
 cd $working_dir
 
