@@ -10,7 +10,12 @@ cmake ../src/rosintro
 # make tests
 make test
 # copy wrapper report to local filesystem
+# shellcheck source=industrial_ci/src/util.sh
+source "${ICI_SRC_PATH}/util.sh"
+# shellcheck source=industrial_ci/src/docker.sh
 source "${ICI_SRC_PATH}/docker.sh"
+# shellcheck source=industrial_ci/src/env.sh
+source "${ICI_SRC_PATH}/env.sh"
 docker_cp CONTAINER:/root/catkin_ws/build-sonar/bw-output /home/travis/build/rosintro/bw-output
 # return to working directory
 cd $working_dir
