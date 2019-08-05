@@ -28,7 +28,7 @@ env:
   global: # global settings for all jobs
     - ROS_REPO=ros
     - CCACHE_DIR=$HOME/.ccache # enables C/C++ caching in industrial_ci
-    - DOCKER_RUN_OPTS='-e SONAR_TOKEN=$SONAR_TOKEN'
+ #   - DOCKER_RUN_OPTS='-e SONAR_TOKEN=$SONAR_TOKEN'
     - BEFORE_SCRIPT='./before_script.sh'
     - AFTER_SCRIPT='./after_script.sh'
   matrix: # each line is a job
@@ -48,3 +48,4 @@ install:
   - git clone --quiet --depth 1 https://github.com/ros-industrial/industrial_ci.git .industrial_ci
 script:
 - .industrial_ci/travis.sh
+- sonar-scanner

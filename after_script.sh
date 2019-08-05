@@ -9,13 +9,8 @@ cmake ../src/rosintro
 /root/sonar/build-wrapper-linux-x86/build-wrapper-linux-x86-64 --out-dir "/root/catkin_ws/build_sonar/bw-output" make
 # make tests
 make test
-# set permission
-chmod 777 /root/sonar
-chmod 777 /root/catkin_ws/build_sonar
-chmod 777 /root/catkin_ws/src/rosintro
-# execute sonar-scanner
-cd /root/catkin_ws/src/rosintro
-/root/sonar/sonar-scanner-4.0.0.1744-linux/bin/sonar-scanner
+# copy wrapper report to local filesystem
+docker_cp CONTAINER:/root/catkin_ws/build-sonar/bw-output /home/travis/build/rosintro/bw-output
 # return to working directory
 cd $working_dir
 
