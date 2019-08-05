@@ -1,3 +1,5 @@
+# install unzip
+apt-get install unzip
 # save current working directory
 working_dir=$PWD
 # create directory for sonar related software
