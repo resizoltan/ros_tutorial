@@ -12,8 +12,5 @@ chmod +x build-wrapper-linux-x86/build-wrapper-linux-x86-64
 # install sonar-scanner
 wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.0.0.1744-linux.zip
 unzip sonar-scanner-cli-4.0.0.1744-linux.zip
-# set permission
-chmod 755 /root/sonar
-chmod 755 /root/catkin_ws/build_sonar
 # return to working directory
 cd $working_dir
