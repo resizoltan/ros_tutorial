@@ -34,6 +34,7 @@ env:
     - DEBUG_BASH='true'
     - CONTAINER_NAME=ici_container
     - SONAR_WRAPPER_OUTDIR='/home/travis/build/kroshu/rosintro/bw-output'
+    - DOCKER_BASE_IMAGE='openjdk:11-jre-slim'
   matrix: # each line is a job
  #   - ROS_DISTRO="lunar" ROS_REPO=ros-shadow-fixed # overrides the global
  #   - ROS_DISTRO="kinetic"
