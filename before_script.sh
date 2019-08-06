@@ -1,5 +1,6 @@
 # install unzip
 apt-get install unzip
+apt-get install default-jre
 # save current working directory
 working_dir=$PWD
 # create directory for sonar related software
