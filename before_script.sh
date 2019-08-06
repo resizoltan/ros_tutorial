@@ -14,5 +14,6 @@ chmod +x build-wrapper-linux-x86/build-wrapper-linux-x86-64
 wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.0.0.1744-linux.zip
 unzip -q sonar-scanner-cli-4.0.0.1744-linux.zip
 sed -i 's/use_embedded_jre=true/use_embedded_jre=false/g' /root/sonar/sonar-scanner-4.0.0.1744-linux/bin/sonar-scanner
+chown -R root /root/sonar/sonar-scanner-4.0.0.1744-linux/bin/sonar-scanner
 # return to working directory
 cd $working_dir
