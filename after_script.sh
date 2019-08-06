@@ -13,6 +13,7 @@ make test
 # run sonar scanner
 #mkdir /root/sonar/src
 #cp -r /root/catkin_ws/src/rosintro /root/sonar/src/
+chmod 777 /root/catkin_ws/src/rosintro
 cd /root/catkin_ws/src/rosintro
 /root/sonar/sonar-scanner-4.0.0.1744-linux/bin/sonar-scanner
 # return to working directory
