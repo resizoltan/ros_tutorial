@@ -27,15 +27,16 @@ env:
     - ROS_REPO=ros
     - CCACHE_DIR=$HOME/.ccache # enables C/C++ caching in industrial_ci
     - DOCKER_RUN_OPTS='-e SONAR_TOKEN=$SONAR_TOKEN'
-    - DOCKER_FILE='./dockerfile'
+  #  - DOCKER_FILE='./dockerfile'
     - BEFORE_SCRIPT='./before_script.sh'
-  #  - AFTER_SCRIPT='./after_script.sh'
+    - AFTER_SCRIPT='./after_script.sh'
     - DEBUG_BASH='true'
     - CONTAINER_NAME=ici_container
     - SONAR_WRAPPER_OUTDIR='/home/travis/build/kroshu/rosintro/bw-output'
-    - DOCKER_BASE_IMAGE='openjdk:11-jre'
-    - OS_NAME=debian
-    - OS_CODE_NAME=stretch
+    - WRITABLE_SOURCE=true
+  #  - DOCKER_BASE_IMAGE='openjdk:11-jre'
+  #  - OS_NAME=debian
+  #  - OS_CODE_NAME=stretch
   matrix: # each line is a job
  #   - ROS_DISTRO="lunar" ROS_REPO=ros-shadow-fixed # overrides the global
  #   - ROS_DISTRO="kinetic"
