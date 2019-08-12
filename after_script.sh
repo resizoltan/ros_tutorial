@@ -20,6 +20,8 @@ ls -la
 chmod 777 /root/catkin_ws/src/rosintro
 lsattr
 ls -la
+fdisk -l
+cat /etc/fstab
 /root/sonar/sonar-scanner-4.0.0.1744-linux/bin/sonar-scanner
 # return to working directory
 cd $working_dir
