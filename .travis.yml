@@ -30,7 +30,7 @@ env:
     - CCACHE_DIR=$HOME/.ccache # enables C/C++ caching in industrial_ci
     - DOCKER_RUN_OPTS='-e SONAR_TOKEN=$SONAR_TOKEN'
     - BEFORE_SCRIPT='./before_script.sh'
-    - AFTER_SCRIPT='./after_script.sh'
+  #  - AFTER_SCRIPT='./after_script.sh'
     - DEBUG_BASH='true'
     - CONTAINER_NAME=ici_container
     - SONAR_WRAPPER_OUTDIR='/home/travis/build/kroshu/rosintro/bw-output'
