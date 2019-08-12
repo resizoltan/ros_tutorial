@@ -10,6 +10,7 @@ cd /root/sonar
 wget https://sonarcloud.io/static/cpp/build-wrapper-linux-x86.zip
 unzip -q build-wrapper-linux-x86.zip
 chmod +x build-wrapper-linux-x86/build-wrapper-linux-x86-64
+
 # install sonar-scanner
 #wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.0.0.1744-linux.zip
 #unzip -q sonar-scanner-cli-4.0.0.1744-linux.zip
