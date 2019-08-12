@@ -1,4 +1,4 @@
-FROM openjdk:8-alpine
+FROM openjdk:8-slim
 
 RUN apk add --no-cache  curl grep sed unzip nodejs nodejs-npm
 
@@ -14,8 +14,6 @@ RUN curl --insecure -o ./sonarscanner.zip -L https://binaries.sonarsource.com/Di
 RUN sed -i 's/use_embedded_jre=true/use_embedded_jre=false/g' /usr/lib/sonar-scanner/bin/sonar-scanner
 
 ENV ROS_DISTRO $ROS_DISTRO
-
-RUN apt-get update -qq && apt-get -qq install -y debconf
 
 RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
 
