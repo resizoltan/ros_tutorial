@@ -15,6 +15,7 @@ RUN sed -i 's/use_embedded_jre=true/use_embedded_jre=false/g' /usr/lib/sonar-sca
 
 ENV ROS_DISTRO $ROS_DISTRO
 
+RUN apt-get update -qq && apt-get -qq install -y debconf
 
 RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
 
