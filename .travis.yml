@@ -5,8 +5,6 @@
 language: cpp # optional, just removes the language badge
 compiler:
   - gcc
-services:
-  - docker
 os:
   - linux
 branches:
