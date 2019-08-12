@@ -1,6 +1,15 @@
 FROM openjdk:8-slim
 
-RUN apt-get update -qq && apt-get install -qq  curl grep sed unzip nodejs nodejs-npm -y
+RUN apt-get update -qq \
+    && apt-get install -qq  \
+	curl \
+	grep \
+	sed \
+	unzip \
+	nodejs \
+    && curl -sL https://deb.nodesource.com/setup_6.x | bash - \
+    && apt-get install -qq \
+	npm
 
 WORKDIR /usr/src
 
