@@ -5,7 +5,7 @@ RUN apk add --no-cache  curl grep sed unzip nodejs nodejs-npm
 WORKDIR /usr/src
 
 RUN curl --insecure -o ./sonarscanner.zip -L https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-3.0.3.778-linux.zip && \
-	unzip sonarscanner.zip && \
+	unzip -q sonarscanner.zip && \
 	rm sonarscanner.zip && \
 	mv sonar-scanner-3.0.3.778-linux /usr/lib/sonar-scanner && \
   ln -s /usr/lib/sonar-scanner/bin/sonar-scanner /usr/local/bin/sonar-scanner
