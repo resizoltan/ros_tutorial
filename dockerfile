@@ -1,6 +1,6 @@
 FROM openjdk:8-slim
 
-RUN apk add --no-cache  curl grep sed unzip nodejs nodejs-npm
+RUN apt-get install -qq  curl grep sed unzip nodejs nodejs-npm -y
 
 WORKDIR /usr/src
 
