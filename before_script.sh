@@ -4,7 +4,7 @@ apt-get install unzip
 # save current working directory
 working_dir=$PWD
 # create directory for sonar related software
-mkdir /root/sonar
+#mkdir /root/sonar
 cd /root/sonar
 # install build wrapper for sonarqube c++
 wget https://sonarcloud.io/static/cpp/build-wrapper-linux-x86.zip
