@@ -3,7 +3,8 @@ project(beginner_tutorials)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
 # add_compile_options(-std=c++11)
-set(CMAKE_CXX_FLAGS "-fprofile-arcs -ftest-coverage")
+
+
 
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
@@ -127,7 +128,7 @@ include_directories(
    src/adder.cpp
  )
 
-target_link_libraries(beginner_tutorials_lib ${catkin_LIBRARIES})
+target_link_libraries(beginner_tutorials_lib ${catkin_LIBRARIES} gcov)
 add_dependencies(beginner_tutorials_lib beginner_tutorials_gencpp)
 
 ## Add cmake target dependencies of the library
@@ -201,28 +202,40 @@ add_dependencies(beginner_tutorials_lib beginner_tutorials_gencpp)
 # catkin_add_nosetests(test)
 
 add_executable(talker src/talker.cpp)
-target_link_libraries(talker ${catkin_LIBRARIES} beginner_tutorials_lib)
+target_link_libraries(talker ${catkin_LIBRARIES} beginner_tutorials_lib gcov)
 add_dependencies(talker beginner_tutorials_generate_messages_cpp)
 
 add_executable(listener src/listener.cpp)
-target_link_libraries(listener ${catkin_LIBRARIES} beginner_tutorials_lib)
+target_link_libraries(listener ${catkin_LIBRARIES} beginner_tutorials_lib gcov)
 add_dependencies(listener beginner_tutorials_generate_messages_cpp)
 
 add_executable(add_two_ints_server src/add_two_ints_server.cpp)
-target_link_libraries(add_two_ints_server ${catkin_LIBRARIES} beginner_tutorials_lib)
+target_link_libraries(add_two_ints_server ${catkin_LIBRARIES} beginner_tutorials_lib gcov)
 add_dependencies(add_two_ints_server beginner_tutorials_gencpp)
 
 add_executable(add_two_ints_client src/add_two_ints_client.cpp)
-target_link_libraries(add_two_ints_client ${catkin_LIBRARIES} beginner_tutorials_lib)
+target_link_libraries(add_two_ints_client ${catkin_LIBRARIES} beginner_tutorials_lib gcov)
 add_dependencies(add_two_ints_client beginner_tutorials_gencpp)
 
 ## Add gtest based cpp test target and link libraries
  if(CATKIN_ENABLE_TESTING)
    catkin_add_gtest(test_lib test/test_lib.cpp)
-   target_link_libraries(test_lib ${catkin_LIBRARIES} beginner_tutorials_lib)
+   target_link_libraries(test_lib ${catkin_LIBRARIES} beginner_tutorials_lib gcov)
    #add_rostest(test/test_lib.cpp)
 
    find_package(rostest REQUIRED)
    add_rostest_gtest(test_node test/test_node.test test/test_node.cpp)
-   target_link_libraries(test_node ${catkin_LIBRARIES} beginner_tutorials_lib)
+   target_link_libraries(test_node ${catkin_LIBRARIES} beginner_tutorials_lib gcov)
  endif()
+
+list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/CMakeModules")
+include(CodeCoverage)
+APPEND_COVERAGE_COMPILER_FLAGS()
+SETUP_TARGET_FOR_COVERAGE_GCOV(NAME unit_test_coverage
+			       EXECUTABLE test_lib
+			       TEST_TARGET test_lib)
+SETUP_TARGET_FOR_COVERAGE_GCOV(NAME node_test_coverage
+			       EXECUTABLE rostest
+			       EXECUTABLE_ARGS "${CMAKE_SOURCE_DIR}/test/test_node.test"
+			       TEST_TARGET test_node
+			       DEPENDENCIES gtest)
