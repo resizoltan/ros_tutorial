@@ -37,6 +37,7 @@ env:
   #  - DOCKER_BASE_IMAGE='openjdk:11-jre'
   #  - OS_NAME=debian
   #  - OS_CODE_NAME=stretch
+    - COVERAGE_TARGET=unit_test_coverage
   matrix: # each line is a job
  #   - ROS_DISTRO="lunar" ROS_REPO=ros-shadow-fixed # overrides the global
  #   - ROS_DISTRO="kinetic"
